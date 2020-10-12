@@ -10,7 +10,6 @@ h = 50;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-
   letterColor = color(255);
   color1 = color('Teal');
   color2 = color('LightSeaGreen');
@@ -26,6 +25,7 @@ function setup() {
       rect(x, y, w / 2.5, h / 2.5);
     }
   }
+
   noStroke();
   comandi();
 }
@@ -158,7 +158,6 @@ function modTwe() {
 }
 
 
-
 function keyReleased() {
   if (key == 's' || key == 'S') {
     save('Texture.png');
@@ -192,12 +191,8 @@ function keyReleased() {
     background(color1);
     comandi();
   }
-
 }
 
-
-
-//
-// function windowResized() {
-//   resizeCanvas(windowWidth, windowHeight);
-// }
+function windowResized() {
+resizeCanvas(windowWidth, windowHeight);
+}
