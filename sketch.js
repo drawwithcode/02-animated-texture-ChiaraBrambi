@@ -4,20 +4,18 @@ function preload() {}
 let w, h, b1, b2, b3, tt, tt2, tt3;
 let letterColor;
 let color1, color2;
-var myColors = ['Orange', 'Red', 'Tomato', '#538be0', '#8f7ceb'];
 w = 50;
 h = 50;
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
 
   letterColor = color(255);
   color1 = color('Teal');
   color2 = color('LightSeaGreen');
   rectMode(CENTER);
   stroke(color1);
+
   for (x = 0; x < width; x += w) {
     for (y = 0; y < height; y += h) {
       fill(color2);
@@ -28,15 +26,13 @@ function setup() {
       rect(x, y, w / 2.5, h / 2.5);
     }
   }
-
-
-
   noStroke();
   comandi();
 }
 
-function draw() {
 
+
+function draw() {
   //BOTTONE 1
   b1 = createButton('TEXTURE 1 + random');
   b1.position((width - 370), (height - 130));
@@ -69,8 +65,6 @@ function draw() {
   b2.style('border-radius', '2px');
 
   b2.mousePressed(modTwe);
-
-
 }
 
 
@@ -80,12 +74,10 @@ function comandi() {
   push();
   noStroke();
   fill(0, 95);
-
   rect(180, height - 120, 300, 150); //rect(x,y,w,h,[tl],[tr],[br],[bl])
 
   fill(letterColor);
   textFont('Helvetica');
-
 
   push();
   noStroke();
@@ -117,19 +109,18 @@ function modOne() {
       rect(x, y, w / 2.5 * noise(random(1, 2)), h / 2.5 * noise(random(1, 2)));
     }
   }
+
   comandi();
 }
 
 
 function modTwe() {
-
   background(color1);
   comandi();
   stroke(color1);
+
   for (var x = 0; x < width; x += 100) {
     for (var y = 0; y < height; y += 100) {
-
-      var index = floor(random()); //floor(n)
       if (random() < 0.5) {
         fill(color1);
       } else {
@@ -137,7 +128,6 @@ function modTwe() {
       }
       triangle(x, y, x, y + 100, x + 50, y + 50);
 
-      var index = floor(random());
       if (random() < 0.5) {
         fill(color2);
       } else {
@@ -145,7 +135,7 @@ function modTwe() {
       }
       triangle(x, y, x + 100, y, x + 50, y + 50);
 
-      var index = floor(random());
+
       if (random() < 0.5) {
         fill(color1);
       } else {
@@ -153,7 +143,6 @@ function modTwe() {
       }
       triangle(x + 100, y, x + 100, y + 100, x + 50, y + 50);
 
-      var index = floor(random());
       if (random() < 0.5) {
         fill(color2);
       } else {
@@ -162,7 +151,6 @@ function modTwe() {
       triangle(x, y + 100, x + 100, y + 100, x + 50, y + 50);
     }
   }
-
   comandi();
 }
 
@@ -183,21 +171,10 @@ function keyReleased() {
         rect(x, y, w / 1.5, h / 1.5);
         fill(color2);
         rect(x, y, w / 2.5, h / 2.5);
+        }
       }
+      comandi();
     }
-    comandi();
-    // for (var x = 25; x < width; x += 50) {
-    //   for (var y = 25; y < height; y += 50) {
-    //     var r = random(0, myColors.length - 1);
-    //     frameRate(5);
-    //     r = Math.round(r);
-    //     noFill();
-    //     stroke(myColors[r]);
-    //     strokeWeight(0.3);
-    //     rect(x, y, 50, 50);
-    //   }
-    // }
-  }
 
   if (key == '2') {
     color1 = color('Teal');
